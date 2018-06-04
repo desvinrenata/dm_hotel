@@ -26,8 +26,8 @@
 							<div class="row">
 								<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 									<div class="slider-text-inner text-center">
-										<h2>Discover &amp; Enjoy</h2>
-										<h1>Everything you need in DM_Hotel</h1>
+										<h2>1641720163</h2>
+										<h1>Nama : Achmad Mahfud</h1>
 										<p><a class="btn btn-primary btn-demo" href="#"> View Detail</a> <a class="btn btn-primary btn-learn">Know More</a></p>
 									</div>
 								</div>
@@ -40,8 +40,8 @@
 							<div class="row">
 								<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
 									<div class="slider-text-inner text-center">
-										<h2>You are invited</h2>
-										<h1>We know how to please you</h1>
+										<h2>1641720083</h2>
+										<h1>Desvin Renata</h1>
 										<p><a class="btn btn-primary btn-demo" href="#"> View Detail</a> <a class="btn btn-primary btn-learn">Know More</a></p>
 									</div>
 								</div>
