@@ -23,6 +23,7 @@
 									<td><?php echo $value['harga'] ?></td>
 									<td><img src="<?php echo base_url('uploads/'.$value['image']) ?>" alt="" width="100px"></td>
 									<td>
+										<a href="<?php echo base_url('Kamar/jenis/'.$value['id']) ?>" class="btn btn-sm btn-info">List Kamar</a>
 										<a href="<?php echo base_url('Jenis/update/'.$value['id']) ?>" class="btn btn-sm btn-success">Update</a>
 										<a href="<?php echo base_url('Jenis/delete/'.$value['id']) ?>" class="btn btn-sm btn-danger">Delete</a>
 									</td>
