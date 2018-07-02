@@ -38,6 +38,14 @@ class Jenis_m extends CI_Model {
         $this->db->where('id',$id);
         $this->db->delete('jenis');
     }
+    public function get_data_kamar()
+    {
+        $this->db->select('jenis.*,count(kamar.id) as jml_tersedia,group_concat(kamar.no_kamar)');
+        $this->db->from('jenis');
+        $this->db->join('kamar','jenis.id=kamar.fk_id_jenis');
+        $this->db->where('kamar.terpesan',0);
+        return $this->db->get()->result();
+    }
 }
 
 ?>
