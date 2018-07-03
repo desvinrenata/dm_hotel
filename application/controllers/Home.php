@@ -32,4 +32,26 @@ class Home extends CI_Controller {
 		$this->session->unset_userdata('search');
 		redirect('Home','refresh');
 	}
+	public function checkout($id)
+	{
+		$this->load->model('Kamar_m');
+		$this->load->model('Jenis_m');
+		$this->load->model('Booking_m');
+		$data['jenis'] = $this->Jenis_m->get_id($id);
+		$data['no_book'] = $this->Booking_m->gen_no_book();
+		$data['list_kamar'] = $this->Kamar_m->get_data_jenis($id);
+		$this->load->view('checkout',$data);
+	}
+	public function complete()
+	{
+		$this->load->model('Booking_m');
+		$id = $this->Booking_m->book();
+		redirect('Home/complete_view/'.$id,'refresh');
+		
+	}
+	public function complete_view($id)
+	{
+		$data['no_book'] = $id;
+		$this->load->view('complete',$data);
+	}
 }
