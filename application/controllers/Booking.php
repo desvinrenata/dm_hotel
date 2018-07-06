@@ -15,21 +15,20 @@ class Booking extends CI_Controller {
 	}
 	public function index()
 	{
+		$data['list_booking'] = $this->Booking_m->get_booking();
 		$data['list_cek_in'] = $this->Booking_m->get_cek_in();
 		$data['list_cek_out'] = $this->Booking_m->get_cek_out();
 		$this->load->view('booking/tampil',$data);
 	}
-	public function cek()
+	public function cek_in($id)
 	{
-		
+		$this->Booking_m->cek_in($id);
+		redirect('Booking','refresh');
 	}
-	public function cek_in_view()
+	public function cek_out($id,$id_kamar)
 	{
-		
-	}
-	public function cek_out_view()
-	{
-		
+		$this->Booking_m->cek_out($id,$id_kamar);
+		redirect('Booking','refresh');
 	}
 }
 

@@ -5,7 +5,7 @@ class Kustomer_m extends CI_Model {
 
 	public function getAll()
     {
-        $this->db->select("id,nama,alamat,notelp,email,username,'*******' as password");
+        $this->db->select("id,nama,alamat,notelp,username,'*******' as password");
         $query = $this->db->get('kustomer');
         if($query->num_rows()>0){
             return $query->result();

@@ -21,20 +21,22 @@
 								<li><a href="aminities.html">Aminities</a></li>
 								<li><a href="blog.html">Blog</a></li>
 								<li><a href="about.html">About</a></li>-->
-								<?php if ($this->session->userdata('logged_in') == null): ?>
-									<li><a href="<?php echo base_url('Login/kustomer') ?>">Login</a></li>
-								<?php else: ?>
-									<?php if (isset($this->session->userdata('logged_in')['level'])): ?>
-									<li><a href="<?php echo base_url('Booking') ?>">CRUD Booking</a></li> 
+								<?php if (isset($this->session->userdata('logged_in')['level'])): ?>
+									<li><a href="<?php echo base_url('Booking') ?>">DASHBOARD</a></li> 
 									<li><a href="<?php echo base_url('Jenis') ?>">CRUD Jenis</a></li> 
 									<li><a href="<?php echo base_url('Kustomer') ?>">CRUD Kustomer</a></li> 
-									<li><a href="<?php echo base_url('Admin') ?>">CRUD Admin</a></li> 
+									<?php if ($this->session->userdata('logged_in')['level'] == 1): ?>
+										<li><a href="<?php echo base_url('Admin') ?>">CRUD Admin</a></li> 
+									<?php endif ?>
 								<?php endif ?>
-									<li><a href="<?php echo base_url('Login/logout') ?>">Logout</a></li>
-								<?php endif ?>
-							</ul>
+								<?php if ($this->session->userdata('logged_in') == null): ?>
+									<li><a href="<?php echo base_url('Login/kustomer') ?>">Login</a></li>
+									<?php else: ?>
+										<li><a href="<?php echo base_url('Login/logout') ?>">Logout</a></li>
+									<?php endif ?>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</nav>
+			</nav>

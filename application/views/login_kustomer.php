@@ -16,7 +16,6 @@
 			<p><input type="password" name="password" placeholder="Password"></p>
 			<p><input type="submit" value="Log in"></p>
 			<a href="<?php echo base_url('Login/register') ?>">Register</a>
-			<a href="<?php echo base_url('Login') ?>" style="background-color:grey;margin-top: 1.5rem;">Login Admin</a>
 		</form>
 	</div>
 </body>

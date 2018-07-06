@@ -67,12 +67,6 @@ $(function() {
           width: 150
         },
         {
-          name: "email",
-          title: "email",
-          type: "text",
-          width: 150
-        },
-        {
           name: "username",
           title: "username",
           type: "text",
