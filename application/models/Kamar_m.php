@@ -15,7 +15,6 @@ class Kamar_m extends CI_Model {
 		$this->db->select('kamar.*,jenis.nama,jenis.harga,jenis.image');
 		$this->db->join('jenis','kamar.fk_id_jenis=jenis.id');
 		$this->db->where('fk_id_jenis',$id);
-		$this->db->where('terpesan',0);
 		$query = $this->db->get('kamar');
 		return $query->result_array();
 	}

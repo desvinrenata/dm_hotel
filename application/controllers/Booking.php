@@ -9,6 +9,9 @@ class Booking extends CI_Controller {
 		$this->load->model('Kamar_m');
 		$this->load->model('Jenis_m');
 		$this->load->model('Booking_m');
+		if ($this->session->userdata('logged_in')['level'] == null) {
+        	redirect('Login/logout','refresh');
+        }
 	}
 	public function index()
 	{

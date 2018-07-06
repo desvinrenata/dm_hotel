@@ -1,12 +1,12 @@
 <nav class="colorlib-nav" role="navigation">
-			<div class="top-menu">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="<?php echo base_url('Home') ?>">DM Hotel</a></div>
-						</div>
-						<div class="col-xs-10 text-right menu-1">
-							<ul>
+	<div class="top-menu">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="colorlib-logo"><a href="<?php echo base_url('Home') ?>">DM Hotel</a></div>
+				</div>
+				<div class="col-xs-10 text-right menu-1">
+					<ul>
 								<!-- <li class="active"><a href="index.html">Home</a></li>
 								<li class="has-dropdown">
 									<a href="rooms-suites.html">Rooms</a>
@@ -21,13 +21,15 @@
 								<li><a href="aminities.html">Aminities</a></li>
 								<li><a href="blog.html">Blog</a></li>
 								<li><a href="about.html">About</a></li>-->
-								<li><a href="<?php echo base_url('Booking') ?>">CRUD Booking</a></li> 
-								<li><a href="<?php echo base_url('Jenis') ?>">CRUD Jenis</a></li> 
-								<li><a href="<?php echo base_url('Kustomer') ?>">CRUD Kustomer</a></li> 
-								<li><a href="<?php echo base_url('Admin') ?>">CRUD Admin</a></li> 
 								<?php if ($this->session->userdata('logged_in') == null): ?>
 									<li><a href="<?php echo base_url('Login/kustomer') ?>">Login</a></li>
 								<?php else: ?>
+									<?php if (isset($this->session->userdata('logged_in')['level'])): ?>
+									<li><a href="<?php echo base_url('Booking') ?>">CRUD Booking</a></li> 
+									<li><a href="<?php echo base_url('Jenis') ?>">CRUD Jenis</a></li> 
+									<li><a href="<?php echo base_url('Kustomer') ?>">CRUD Kustomer</a></li> 
+									<li><a href="<?php echo base_url('Admin') ?>">CRUD Admin</a></li> 
+								<?php endif ?>
 									<li><a href="<?php echo base_url('Login/logout') ?>">Logout</a></li>
 								<?php endif ?>
 							</ul>

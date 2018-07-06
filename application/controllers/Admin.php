@@ -6,6 +6,9 @@ class Admin extends CI_Controller {
 	function __construct() {
         parent::__construct();
         $this->load->model('Admin_m');
+        if ($this->session->userdata('logged_in')['level'] != 1) {
+        	redirect('Login/logout','refresh');
+        }
     }	
     public function index()
 	{

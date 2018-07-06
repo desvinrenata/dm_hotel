@@ -34,6 +34,10 @@ class Home extends CI_Controller {
 	}
 	public function checkout($id)
 	{
+		if ($this->session->userdata('logged_in')['nama'] == null) {
+			echo '<script>alert("Harus Login Dahulu")</script>';
+        	redirect('Login/logout','refresh');
+        }
 		$this->load->model('Kamar_m');
 		$this->load->model('Jenis_m');
 		$this->load->model('Booking_m');
@@ -44,6 +48,10 @@ class Home extends CI_Controller {
 	}
 	public function complete()
 	{
+		if ($this->session->userdata('logged_in')['nama'] == null) {
+			echo '<script>alert("Harus Login Dahulu")</script>';
+        	redirect('Login/logout','refresh');
+        }
 		$this->load->model('Booking_m');
 		$id = $this->Booking_m->book();
 		redirect('Home/complete_view/'.$id,'refresh');
@@ -51,6 +59,10 @@ class Home extends CI_Controller {
 	}
 	public function complete_view($id)
 	{
+		if ($this->session->userdata('logged_in')['nama'] == null) {
+			echo '<script>alert("Harus Login Dahulu")</script>';
+        	redirect('Login/logout','refresh');
+        }
 		$data['no_book'] = $id;
 		$this->load->view('complete',$data);
 	}

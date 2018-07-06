@@ -3,11 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Kamar extends CI_Controller {
 	
+	public function __construct()
+	{
+		parent::__construct();
+		if ($this->session->userdata('logged_in')['level'] == null) {
+        	redirect('Login/logout','refresh');
+        }
+	}
 	public function index()
 	{
 		$this->load->model('Kamar_m');
 		$data['kamar_data'] = $this->Kamar_m->get_data();
 		$this->load->view('kamar/tampil',$data);
+
 	}
 	public function jenis($id)
 	{

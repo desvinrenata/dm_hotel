@@ -68,7 +68,7 @@ class Login extends CI_Controller {
 	}
 	public function logout()
 	{
-		$this->session->sess_destroy();
-		redirect('Login','refresh');
+		$this->session->unset_userdata('logged_in');
+		redirect('Login/kustomer','refresh');
 	}
 }
