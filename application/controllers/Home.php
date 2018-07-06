@@ -34,7 +34,7 @@ class Home extends CI_Controller {
 	}
 	public function checkout($id)
 	{
-		if ($this->session->userdata('logged_in')['nama'] == null) {
+		if ($this->session->userdata('logged_in') == null) {
 			echo '<script>alert("Harus Login Dahulu")</script>';
         	redirect('Login/logout','refresh');
         }

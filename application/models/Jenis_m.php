@@ -42,7 +42,8 @@ class Jenis_m extends CI_Model {
     {
         $this->db->select('jenis.id,jenis.nama,jenis.harga,jenis.image,count(kamar.id) as jml_tersedia,group_concat(kamar.no_kamar)');
         $this->db->from('jenis');
-        $this->db->join('kamar','jenis.id=kamar.fk_id_jenis','left');
+        $this->db->join('kamar','jenis.id=kamar.fk_id_jenis');
+        $this->db->group_by('jenis.id');
         $this->db->where('kamar.terpesan',0);
         $this->db->having('count(kamar.id) >',0);
         return $this->db->get()->result();
