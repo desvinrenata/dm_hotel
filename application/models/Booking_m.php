@@ -16,6 +16,8 @@ class Booking_m extends CI_Model {
 			'fk_id_kustomer' => $this->session->userdata('logged_in')['id']
 		);
 		$this->db->insert('booking',$set);
+		$data['terpesan'] = 1;
+		$this->db->where('id',$this->input->post('fk_id_kamar'))->update('kamar',$data);
 		return $ret;
 	}
 	public function gen_no_book()
@@ -30,6 +32,23 @@ class Booking_m extends CI_Model {
 		}else{
 			return 'DM-Hotel-00001-'.rand(100000,999999);
 		}
+	}
+	// cek_in
+	public function get_cek_in()
+	{
+		$this->db->select('cek_in.*,booking.no_book,kamar.no_kamar');
+		$this->db->join('booking','cek_in.fk_id_booking=booking.id');
+		$this->db->join('kamar','booking.fk_id_kamar=kamar.id');
+		return $this->db->get('cek_in')->result_array();
+	}
+	// cek_out
+	public function get_cek_out()
+	{
+		$this->db->select('cek_out.*,cek_in.date as tanggal_cek_in,booking.no_book,kamar.no_kamar');
+		$this->db->join('cek_in','cek_out.fk_id_cek_in=cek_in.id');
+		$this->db->join('booking','cek_in.fk_id_booking=booking.id');
+		$this->db->join('kamar','booking.fk_id_kamar=kamar.id');
+		return $this->db->get('cek_out')->result_array();
 	}
 }
 

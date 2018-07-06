@@ -1,4 +1,4 @@
- <?php
+<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Jenis extends CI_Controller {
@@ -56,8 +56,8 @@ class Jenis extends CI_Controller {
 			$this->load->library('upload', $config);
 			
 			if ( ! $this->upload->do_upload('image')){
-				$data['jenis'] = $this->Jenis_m->get_id($id);
-				$data['error'] = $this->upload->display_errors();
+				$data['sepatu'] = $this->Sepatu_model->getSepatu($id);
+				$data['error'] = array('error' => $this->upload->display_errors());
 				$this->load->view('jenis/update',$data);
 			}
 			else{
@@ -74,4 +74,3 @@ class Jenis extends CI_Controller {
 		redirect('Jenis','refresh');
 	}
 }
- 

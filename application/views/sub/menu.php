@@ -21,6 +21,7 @@
 								<li><a href="aminities.html">Aminities</a></li>
 								<li><a href="blog.html">Blog</a></li>
 								<li><a href="about.html">About</a></li>-->
+								<li><a href="<?php echo base_url('Booking') ?>">CRUD Booking</a></li> 
 								<li><a href="<?php echo base_url('Jenis') ?>">CRUD Jenis</a></li> 
 								<li><a href="<?php echo base_url('Kustomer') ?>">CRUD Kustomer</a></li> 
 								<li><a href="<?php echo base_url('Admin') ?>">CRUD Admin</a></li> 
