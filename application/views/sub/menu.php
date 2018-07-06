@@ -26,7 +26,7 @@
 								<li><a href="<?php echo base_url('Kustomer') ?>">CRUD Kustomer</a></li> 
 								<li><a href="<?php echo base_url('Admin') ?>">CRUD Admin</a></li> 
 								<?php if ($this->session->userdata('logged_in') == null): ?>
-									<li><a href="<?php echo base_url('Login') ?>">Login</a></li>
+									<li><a href="<?php echo base_url('Login/kustomer') ?>">Login</a></li>
 								<?php else: ?>
 									<li><a href="<?php echo base_url('Login/logout') ?>">Logout</a></li>
 								<?php endif ?>
