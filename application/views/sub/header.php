@@ -50,6 +50,8 @@
 
 	<!-- Modernizr JS -->
 	<script src="<?php echo base_url('template/'); ?>js/modernizr-2.6.2.min.js"></script>
+	
+		<script src="<?php echo base_url('template/') ?>js/jquery.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="<?php echo base_url('template/'); ?>js/respond.min.js"></script>
